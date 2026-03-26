@@ -1,0 +1,57 @@
+🚀 Exoplanet Life Project
+
+Ce projet utilise Python 3.12 et dbt pour transformer et analyser des données.
+
+📦 Prérequis
+
+Avant de commencer, assure-toi d’avoir installé :
+
+Python 3.12
+Git
+(Optionnel) MySQL si utilisé avec dbt
+⚙️ Installation
+1. Cloner le dépôt
+git clone https://github.com/ton-username/Exoplanet_Life.git
+cd Exoplanet_Life
+2. Se placer sur la branche ELT
+git checkout ELT
+3. Créer un environnement virtuel
+py -3.12 -m venv dbt-env-312
+4. Activer l’environnement
+Git Bash
+source dbt-env-312/Scripts/activate
+PowerShell
+.\dbt-env-312\Scripts\Activate.ps1
+5. Installer les dépendances
+pip install --upgrade pip
+pip install -r requirements.txt
+🔍 Vérification
+
+Vérifie que dbt est bien installé :
+
+dbt --version
+🛠️ Configuration DBT
+
+Créer le fichier suivant :
+
+C:\Users\<your-user>\.dbt\profiles.yml
+
+Exemple de configuration MySQL :
+
+my_dbt_project:
+  target: dev
+  outputs:
+    dev:
+      type: mysql
+      server: localhost
+      port: 3306
+      schema: Exoplanet_DBT
+      username: root
+      password: your_password
+
+⚠️ Ne jamais versionner ce fichier (contient des identifiants sensibles)
+
+▶️ Lancer dbt
+dbt debug
+dbt run
+dbt test
