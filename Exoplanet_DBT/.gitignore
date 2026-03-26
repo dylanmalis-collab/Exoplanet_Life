@@ -1,4 +1,22 @@
-
+# dbt artifacts
 target/
 dbt_packages/
 logs/
+
+# dbt local config (souvent sensible)
+profiles.yml
+
+# Python / environnement
+venv/
+.env/
+__pycache__/
+*.pyc
+
+# OS / éditeur
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# fichiers temporaires
+*.log
