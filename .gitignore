@@ -9,3 +9,5 @@ wheels/
 # Virtual environments
 .venv/
 dbt-env-312/
+dbt-bq-env/
+credentials/cle_bigquery.json

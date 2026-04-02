@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: raw
+    database: exoplanet-491915
+    schema: raw_data
+    tables:
+      - name: raw_exoplanets
