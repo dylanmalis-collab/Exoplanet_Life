@@ -1,0 +1,61 @@
+version: 2
+
+models:
+  - name: dim_planete
+    description: Dimension des planètes
+    columns:
+      - name: planete_sk
+        description: Clé substitut de la dimension planète
+        tests:
+          - not_null
+          - unique
+      - name: nom_planete
+        description: Nom de la planète
+
+  - name: dim_systeme
+    description: Dimension des systèmes exoplanétaires
+    columns:
+      - name: systeme_sk
+        description: Clé substitut du système
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_decouverte
+    description: Dimension de découverte
+    columns:
+      - name: decouverte_sk
+        description: Clé substitut de la découverte
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_etoile
+    description: Dimension des étoiles
+    columns:
+      - name: etoile_sk
+        description: Clé substitut de l’étoile
+        tests:
+          - not_null
+          - unique
+
+  - name: fact_exoplanete
+    description: Table de faits des exoplanètes
+    columns:
+      - name: fact_exoplanete_sk
+        description: Clé substitut de la table de faits
+        tests:
+          - not_null
+          - unique
+      - name: planete_sk
+        tests:
+          - not_null
+      - name: systeme_sk
+        tests:
+          - not_null
+      - name: decouverte_sk
+        tests:
+          - not_null
+      - name: etoile_sk
+        tests:
+          - not_null

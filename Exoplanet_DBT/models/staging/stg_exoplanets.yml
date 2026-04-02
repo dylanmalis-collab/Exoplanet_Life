@@ -1,0 +1,147 @@
+version: 2
+
+models:
+  - name: stg_exoplanets
+    description: >
+      Table de staging des exoplanètes provenant de la NASA Exoplanet Archive.
+      Les colonnes sont nettoyées et renommées en français.
+
+    columns:
+
+      - name: nom_planete
+        description: Nom de la planète
+        tests:
+          - not_null
+          - unique
+
+      - name: nom_etoile_hote
+        description: Nom de l’étoile hôte
+
+      - name: nom_hd
+        description: Identifiant catalogue Henry Draper
+
+      - name: nom_hipparcos
+        description: Identifiant catalogue Hipparcos
+
+      - name: id_tic
+        description: Identifiant TIC (TESS Input Catalog)
+
+      - name: id_gaia_dr2
+        description: Identifiant Gaia DR2
+
+      - name: id_gaia_dr3
+        description: Identifiant Gaia DR3
+
+      - name: nb_etoiles_systeme
+        description: Nombre d’étoiles dans le système
+
+      - name: nb_planetes_systeme
+        description: Nombre de planètes dans le système
+
+      - name: nb_lunes_systeme
+        description: Nombre de lunes
+
+      - name: systeme_binaire_flag
+        description: Indique si système binaire
+
+      - name: methode_decouverte
+        description: Méthode de découverte
+
+      - name: annee_decouverte
+        description: Année de découverte
+
+      - name: instrument_decouverte
+        description: Instrument de découverte
+
+      - name: planete_controversee_flag
+        description: Indique si planète controversée
+
+      - name: periode_orbitale_jours
+        description: Période orbitale en jours
+
+      - name: rayon_terre
+        description: Rayon en unités terrestres
+
+      - name: rayon_jupiter
+        description: Rayon en unités joviennes
+
+      - name: masse_terre
+        description: Masse en unités terrestres
+
+      - name: masse_jupiter
+        description: Masse en unités joviennes
+
+      - name: type_masse
+        description: Méthode de mesure de la masse
+
+      - name: densite_planete
+        description: Densité de la planète
+
+      - name: excentricite_orbite
+        description: Excentricité orbitale
+
+      - name: flux_recu
+        description: Flux reçu de l’étoile
+
+      - name: temperature_equilibre
+        description: Température d’équilibre
+
+      - name: transit_milieu
+        description: Temps du transit
+
+      - name: ttv_flag
+        description: Variation de transit
+
+      - name: profondeur_occultation
+        description: Profondeur de l’occultation
+
+      - name: type_spectral
+        description: Type spectral de l’étoile
+
+      - name: temperature_etoile
+        description: Température de l’étoile
+
+      - name: rayon_etoile
+        description: Rayon de l’étoile
+
+      - name: masse_etoile
+        description: Masse de l’étoile
+
+      - name: metalicite
+        description: Métalicité
+
+      - name: ratio_metalicite
+        description: Ratio de métal
+
+      - name: luminosite
+        description: Luminosité de l’étoile
+
+      - name: gravite_surface
+        description: Gravité de surface
+
+      - name: densite_etoile
+        description: Densité de l’étoile
+
+      - name: ascension_droite_str
+        description: Ascension droite (texte)
+
+      - name: ascension_droite
+        description: Ascension droite (numérique)
+
+      - name: declinaison_str
+        description: Déclinaison (texte)
+
+      - name: declinaison
+        description: Déclinaison (numérique)
+
+      - name: distance_systeme
+        description: Distance du système
+
+      - name: magnitude_v
+        description: Magnitude visuelle
+
+      - name: magnitude_k
+        description: Magnitude K
+
+      - name: magnitude_gaia
+        description: Magnitude Gaia
