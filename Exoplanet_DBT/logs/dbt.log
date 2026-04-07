@@ -1,0 +1,464 @@
+[0m17:17:46.807642 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021F27368110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021F27368050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021F27368650>]}
+
+
+============================== 17:17:46.823588 | 0fea6734-844c-4ece-832d-6754fc5ea4af ==============================
+[0m17:17:46.823588 [info ] [MainThread]: Running with dbt=1.7.19
+[0m17:17:46.823588 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\berna\\.dbt', 'version_check': 'True', 'debug': 'False', 'log_path': 'J:\\Projet 3\\Exoplanet_DBT\\logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt run', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m17:17:46.825582 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Could not find profile named 'Exoplanet_DBT'
+[0m17:17:46.826578 [debug] [MainThread]: Command `dbt run` failed at 17:17:46.826578 after 0.08 seconds
+[0m17:17:46.826578 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021F26E9F200>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021F27075790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021F2711C9B0>]}
+[0m17:17:46.826578 [debug] [MainThread]: Flushing usage events
+[0m17:26:05.740646 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022FC809A270>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022FC6F14830>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022FC8099130>]}
+
+
+============================== 17:26:05.748620 | e6be31f4-a013-4e1b-889b-2ff1ab1eb062 ==============================
+[0m17:26:05.748620 [info ] [MainThread]: Running with dbt=1.7.19
+[0m17:26:05.748620 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\berna\\.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'J:\\Projet 3\\Exoplanet_DBT\\logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt run', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m17:26:05.933219 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e6be31f4-a013-4e1b-889b-2ff1ab1eb062', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022FC6EE3200>]}
+[0m17:26:05.967311 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'e6be31f4-a013-4e1b-889b-2ff1ab1eb062', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022FC6F40B90>]}
+[0m17:26:05.970297 [info ] [MainThread]: Registered adapter: mysql=1.7.0
+[0m17:26:05.974283 [debug] [MainThread]: checksum: a8d43cdff37d0f32d7fbe4c5c25bea4bb6c86e162f8ce8fdb1a38cdcf7495431, vars: {}, profile: , target: , version: 1.7.19
+[0m17:26:05.974283 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m17:26:05.975280 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'e6be31f4-a013-4e1b-889b-2ff1ab1eb062', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022FC80F53D0>]}
+[0m17:26:06.555074 [warn ] [MainThread]: [[33mWARNING[0m]: Did not find matching node for patch with name 'fact_mesures_planet' in the 'models' section of file 'models\PowerBI\Fact_mesures_planet.yml'
+[0m17:26:06.628345 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.Exoplanet_DBT.not_null_fact_mesures_planet_pl_name.ec19a388bb' (models\PowerBI\Fact_mesures_planet.yml) depends on a node named 'fact_mesures_planet' in package '' which was not found
+[0m17:26:06.628345 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.Exoplanet_DBT.not_null_fact_mesures_planet_hostname.e78226f917' (models\PowerBI\Fact_mesures_planet.yml) depends on a node named 'fact_mesures_planet' in package '' which was not found
+[0m17:26:06.629337 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.Exoplanet_DBT.not_null_fact_mesures_planet_discoverymethod.36000cc82f' (models\PowerBI\Fact_mesures_planet.yml) depends on a node named 'fact_mesures_planet' in package '' which was not found
+[0m17:26:06.629337 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.Exoplanet_DBT.not_null_fact_mesures_planet_type_planete.5ac64c1c14' (models\PowerBI\Fact_mesures_planet.yml) depends on a node named 'fact_mesures_planet' in package '' which was not found
+[0m17:26:06.638309 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.Exoplanet_DBT.example
+[0m17:26:06.641300 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'e6be31f4-a013-4e1b-889b-2ff1ab1eb062', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022FC898A330>]}
+[0m17:26:06.645286 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'e6be31f4-a013-4e1b-889b-2ff1ab1eb062', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022FC8835880>]}
+[0m17:26:06.646282 [info ] [MainThread]: Found 1 model, 1 seed, 0 sources, 0 exposures, 0 metrics, 375 macros, 0 groups, 0 semantic models
+[0m17:26:06.646282 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e6be31f4-a013-4e1b-889b-2ff1ab1eb062', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022FC88DEB70>]}
+[0m17:26:06.647279 [info ] [MainThread]: 
+[0m17:26:06.648281 [debug] [MainThread]: Acquiring new mysql connection 'master'
+[0m17:26:06.649273 [debug] [ThreadPool]: Acquiring new mysql connection 'list_schemas'
+[0m17:26:06.655252 [debug] [ThreadPool]: Using mysql connection "list_schemas"
+[0m17:26:06.655252 [debug] [ThreadPool]: On list_schemas: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "Exoplanet_DBT", "target_name": "dev", "connection_name": "list_schemas"} */
+select distinct schema_name
+        from information_schema.schemata
+[0m17:26:06.655252 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:26:06.666220 [debug] [ThreadPool]: SQL status: SUCCESS 9 in 0.0 seconds
+[0m17:26:06.667212 [debug] [ThreadPool]: On list_schemas: Close
+[0m17:26:06.668213 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_schemas, now create__Exoplanet_DBT)
+[0m17:26:06.668213 [debug] [ThreadPool]: Creating schema "schema: "Exoplanet_DBT"
+"
+[0m17:26:06.671712 [debug] [ThreadPool]: Using mysql connection "create__Exoplanet_DBT"
+[0m17:26:06.671712 [debug] [ThreadPool]: On create__Exoplanet_DBT: BEGIN
+[0m17:26:06.671712 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:26:06.675699 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m17:26:06.675699 [debug] [ThreadPool]: Using mysql connection "create__Exoplanet_DBT"
+[0m17:26:06.675699 [debug] [ThreadPool]: On create__Exoplanet_DBT: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "Exoplanet_DBT", "target_name": "dev", "connection_name": "create__Exoplanet_DBT"} */
+create schema if not exists `Exoplanet_DBT`
+[0m17:26:06.678689 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.0 seconds
+[0m17:26:06.678689 [debug] [ThreadPool]: On create__Exoplanet_DBT: COMMIT
+[0m17:26:06.678689 [debug] [ThreadPool]: Using mysql connection "create__Exoplanet_DBT"
+[0m17:26:06.678689 [debug] [ThreadPool]: On create__Exoplanet_DBT: COMMIT
+[0m17:26:06.679689 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m17:26:06.679689 [debug] [ThreadPool]: On create__Exoplanet_DBT: Close
+[0m17:26:06.680682 [debug] [ThreadPool]: Acquiring new mysql connection 'list_None_Exoplanet_DBT'
+[0m17:26:06.683676 [debug] [ThreadPool]: Using mysql connection "list_None_Exoplanet_DBT"
+[0m17:26:06.683676 [debug] [ThreadPool]: On list_None_Exoplanet_DBT: BEGIN
+[0m17:26:06.684669 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:26:06.688114 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m17:26:06.688114 [debug] [ThreadPool]: Using mysql connection "list_None_Exoplanet_DBT"
+[0m17:26:06.688114 [debug] [ThreadPool]: On list_None_Exoplanet_DBT: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "Exoplanet_DBT", "target_name": "dev", "connection_name": "list_None_Exoplanet_DBT"} */
+select
+      null as "database",
+      table_name as name,
+      table_schema as "schema",
+      case when table_type = 'BASE TABLE' then 'table'
+           when table_type = 'VIEW' then 'view'
+           else table_type
+      end as table_type
+    from information_schema.tables
+    where table_schema = 'Exoplanet_DBT'
+  
+[0m17:26:06.689110 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m17:26:06.689110 [debug] [ThreadPool]: On list_None_Exoplanet_DBT: ROLLBACK
+[0m17:26:06.690107 [debug] [ThreadPool]: On list_None_Exoplanet_DBT: Close
+[0m17:26:06.690107 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e6be31f4-a013-4e1b-889b-2ff1ab1eb062', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022FC8973950>]}
+[0m17:26:06.691099 [debug] [MainThread]: Using mysql connection "master"
+[0m17:26:06.691099 [debug] [MainThread]: On master: BEGIN
+[0m17:26:06.691099 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:26:06.694093 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m17:26:06.694093 [debug] [MainThread]: On master: COMMIT
+[0m17:26:06.694093 [debug] [MainThread]: Using mysql connection "master"
+[0m17:26:06.694093 [debug] [MainThread]: On master: COMMIT
+[0m17:26:06.695086 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m17:26:06.695086 [debug] [MainThread]: On master: Close
+[0m17:26:06.695086 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m17:26:06.696082 [info ] [MainThread]: 
+[0m17:26:06.705052 [debug] [Thread-1 (]: Began running node model.Exoplanet_DBT.Fact_mesures_planet
+[0m17:26:06.705052 [info ] [Thread-1 (]: 1 of 1 START sql view model Exoplanet_DBT.Fact_mesures_planet .................. [RUN]
+[0m17:26:06.706049 [debug] [Thread-1 (]: Acquiring new mysql connection 'model.Exoplanet_DBT.Fact_mesures_planet'
+[0m17:26:06.706049 [debug] [Thread-1 (]: Began compiling node model.Exoplanet_DBT.Fact_mesures_planet
+[0m17:26:06.710039 [debug] [Thread-1 (]: Writing injected SQL for node "model.Exoplanet_DBT.Fact_mesures_planet"
+[0m17:26:06.711032 [debug] [Thread-1 (]: Timing info for model.Exoplanet_DBT.Fact_mesures_planet (compile): 17:26:06.706049 => 17:26:06.710039
+[0m17:26:06.711032 [debug] [Thread-1 (]: Began executing node model.Exoplanet_DBT.Fact_mesures_planet
+[0m17:26:06.726488 [debug] [Thread-1 (]: Writing runtime sql for node "model.Exoplanet_DBT.Fact_mesures_planet"
+[0m17:26:06.727484 [debug] [Thread-1 (]: Using mysql connection "model.Exoplanet_DBT.Fact_mesures_planet"
+[0m17:26:06.727484 [debug] [Thread-1 (]: On model.Exoplanet_DBT.Fact_mesures_planet: BEGIN
+[0m17:26:06.728481 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m17:26:06.731474 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m17:26:06.731474 [debug] [Thread-1 (]: Using mysql connection "model.Exoplanet_DBT.Fact_mesures_planet"
+[0m17:26:06.731474 [debug] [Thread-1 (]: On model.Exoplanet_DBT.Fact_mesures_planet: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "Exoplanet_DBT", "target_name": "dev", "node_id": "model.Exoplanet_DBT.Fact_mesures_planet"} */
+
+  create view `Exoplanet_DBT`.`Fact_mesures_planet__dbt_tmp`
+    
+    
+  as (
+    with Fact_mesures_planet as (
+    select *
+    from `Exoplanet_DBT`.`DataFrameFinal`
+),
+
+Fact_mesures_planet_renamed as (
+    select
+        pl_name as nom_planete,
+        hostname as nom_etoile_hote,
+        discoverymethod as methode_decouverte,
+        pl_orbper as periode_orbitale,
+        pl_orbperlim as periode_orbitale_ind_limite,
+        pl_orbsmax as demi_grand_axe_orbite,
+        pl_rade as rayon_planete_terre,
+        pl_radj as rayon_planete_jupiter,
+        pl_bmasse as masse_planete_terre_ou_msin_i,
+        pl_bmassj as masse_planete_jupiter_ou_msin_i,
+        pl_bmassprov as provenance_masse_planete,
+        pl_dens as densite_planete,
+        pl_orbeccen as excentricite_orbite,
+        pl_eqt as temperature_equilibre,
+        pl_tranmid as milieu_transit,
+        ttv_flag as ind_variations_temps_transit,
+        pl_occdep as profondeur_occultation,
+        `Masse_(10^24kg)` as masse_10_24kg,
+        `Gravity_(G_earth)` as gravite_terre,
+        Score_roch as score_roch,
+        pl_type as type_planete
+    from Fact_mesures_planet
+)
+
+select *
+from Fact_mesures_planet_renamed
+  );
+[0m17:26:06.732471 [debug] [Thread-1 (]: mysql adapter: MySQL error: 1146 (42S02): Table 'exoplanet_dbt.dataframefinal' doesn't exist
+[0m17:26:06.732471 [debug] [Thread-1 (]: On model.Exoplanet_DBT.Fact_mesures_planet: ROLLBACK
+[0m17:26:06.733468 [debug] [Thread-1 (]: Timing info for model.Exoplanet_DBT.Fact_mesures_planet (execute): 17:26:06.711032 => 17:26:06.732471
+[0m17:26:06.733468 [debug] [Thread-1 (]: On model.Exoplanet_DBT.Fact_mesures_planet: Close
+[0m17:26:06.735461 [debug] [Thread-1 (]: Database Error in model Fact_mesures_planet (models\PowerBI\Fact_mesures_planet.sql)
+  1146 (42S02): Table 'exoplanet_dbt.dataframefinal' doesn't exist
+  compiled Code at target\run\Exoplanet_DBT\models\PowerBI\Fact_mesures_planet.sql
+[0m17:26:06.736458 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e6be31f4-a013-4e1b-889b-2ff1ab1eb062', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022FC8613440>]}
+[0m17:26:06.736458 [error] [Thread-1 (]: 1 of 1 ERROR creating sql view model Exoplanet_DBT.Fact_mesures_planet ......... [[31mERROR[0m in 0.03s]
+[0m17:26:06.736458 [debug] [Thread-1 (]: Finished running node model.Exoplanet_DBT.Fact_mesures_planet
+[0m17:26:06.738462 [debug] [MainThread]: Using mysql connection "master"
+[0m17:26:06.738462 [debug] [MainThread]: On master: BEGIN
+[0m17:26:06.739459 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m17:26:06.742449 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m17:26:06.742449 [debug] [MainThread]: On master: COMMIT
+[0m17:26:06.742449 [debug] [MainThread]: Using mysql connection "master"
+[0m17:26:06.742449 [debug] [MainThread]: On master: COMMIT
+[0m17:26:06.743446 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m17:26:06.743446 [debug] [MainThread]: On master: Close
+[0m17:26:06.743446 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:26:06.743446 [debug] [MainThread]: Connection 'create__Exoplanet_DBT' was properly closed.
+[0m17:26:06.744442 [debug] [MainThread]: Connection 'list_None_Exoplanet_DBT' was properly closed.
+[0m17:26:06.744442 [debug] [MainThread]: Connection 'model.Exoplanet_DBT.Fact_mesures_planet' was properly closed.
+[0m17:26:06.744442 [info ] [MainThread]: 
+[0m17:26:06.744442 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 0.10 seconds (0.10s).
+[0m17:26:06.745439 [debug] [MainThread]: Command end result
+[0m17:26:06.749431 [info ] [MainThread]: 
+[0m17:26:06.749431 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m17:26:06.749431 [info ] [MainThread]: 
+[0m17:26:06.749431 [error] [MainThread]:   Database Error in model Fact_mesures_planet (models\PowerBI\Fact_mesures_planet.sql)
+  1146 (42S02): Table 'exoplanet_dbt.dataframefinal' doesn't exist
+  compiled Code at target\run\Exoplanet_DBT\models\PowerBI\Fact_mesures_planet.sql
+[0m17:26:06.750426 [info ] [MainThread]: 
+[0m17:26:06.750426 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m17:26:06.751419 [debug] [MainThread]: Command `dbt run` failed at 17:26:06.751419 after 1.08 seconds
+[0m17:26:06.751419 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022FC6F14830>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022FC8954CB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022FC6E5B2C0>]}
+[0m17:26:06.751419 [debug] [MainThread]: Flushing usage events
+[0m17:26:56.575852 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A5420DEFC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A5420DD010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A5420DEF60>]}
+
+
+============================== 17:26:56.577849 | 71da5c66-c99d-41bf-9b98-dd53407a5b2c ==============================
+[0m17:26:56.577849 [info ] [MainThread]: Running with dbt=1.7.19
+[0m17:26:56.577849 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\berna\\.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': 'J:\\Projet 3\\Exoplanet_DBT\\logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt seed', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m17:26:56.670862 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '71da5c66-c99d-41bf-9b98-dd53407a5b2c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A543120E90>]}
+[0m17:26:56.704749 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '71da5c66-c99d-41bf-9b98-dd53407a5b2c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A541EDABD0>]}
+[0m17:26:56.705745 [info ] [MainThread]: Registered adapter: mysql=1.7.0
+[0m17:26:56.709732 [debug] [MainThread]: checksum: a8d43cdff37d0f32d7fbe4c5c25bea4bb6c86e162f8ce8fdb1a38cdcf7495431, vars: {}, profile: , target: , version: 1.7.19
+[0m17:26:56.729669 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m17:26:56.729669 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m17:26:56.729669 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.Exoplanet_DBT.example
+[0m17:26:56.732660 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '71da5c66-c99d-41bf-9b98-dd53407a5b2c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A543600560>]}
+[0m17:26:56.737415 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '71da5c66-c99d-41bf-9b98-dd53407a5b2c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A5436EEC90>]}
+[0m17:26:56.737415 [info ] [MainThread]: Found 1 model, 1 seed, 0 sources, 0 exposures, 0 metrics, 375 macros, 0 groups, 0 semantic models
+[0m17:26:56.738407 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '71da5c66-c99d-41bf-9b98-dd53407a5b2c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A541F4BC20>]}
+[0m17:26:56.739404 [info ] [MainThread]: 
+[0m17:26:56.740401 [debug] [MainThread]: Acquiring new mysql connection 'master'
+[0m17:26:56.740401 [debug] [ThreadPool]: Acquiring new mysql connection 'list_schemas'
+[0m17:26:56.745384 [debug] [ThreadPool]: Using mysql connection "list_schemas"
+[0m17:26:56.746381 [debug] [ThreadPool]: On list_schemas: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "Exoplanet_DBT", "target_name": "dev", "connection_name": "list_schemas"} */
+select distinct schema_name
+        from information_schema.schemata
+[0m17:26:56.746381 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:26:56.757557 [debug] [ThreadPool]: SQL status: SUCCESS 10 in 0.0 seconds
+[0m17:26:56.758257 [debug] [ThreadPool]: On list_schemas: Close
+[0m17:26:56.759240 [debug] [ThreadPool]: Acquiring new mysql connection 'list_None_Exoplanet_DBT'
+[0m17:26:56.762233 [debug] [ThreadPool]: Using mysql connection "list_None_Exoplanet_DBT"
+[0m17:26:56.762233 [debug] [ThreadPool]: On list_None_Exoplanet_DBT: BEGIN
+[0m17:26:56.762233 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:26:56.765220 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m17:26:56.766216 [debug] [ThreadPool]: Using mysql connection "list_None_Exoplanet_DBT"
+[0m17:26:56.766216 [debug] [ThreadPool]: On list_None_Exoplanet_DBT: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "Exoplanet_DBT", "target_name": "dev", "connection_name": "list_None_Exoplanet_DBT"} */
+select
+      null as "database",
+      table_name as name,
+      table_schema as "schema",
+      case when table_type = 'BASE TABLE' then 'table'
+           when table_type = 'VIEW' then 'view'
+           else table_type
+      end as table_type
+    from information_schema.tables
+    where table_schema = 'Exoplanet_DBT'
+  
+[0m17:26:56.766216 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m17:26:56.767217 [debug] [ThreadPool]: On list_None_Exoplanet_DBT: ROLLBACK
+[0m17:26:56.767217 [debug] [ThreadPool]: On list_None_Exoplanet_DBT: Close
+[0m17:26:56.768210 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '71da5c66-c99d-41bf-9b98-dd53407a5b2c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A5435CC350>]}
+[0m17:26:56.768210 [debug] [MainThread]: Using mysql connection "master"
+[0m17:26:56.768210 [debug] [MainThread]: On master: BEGIN
+[0m17:26:56.768210 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:26:56.771200 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m17:26:56.772196 [debug] [MainThread]: On master: COMMIT
+[0m17:26:56.772196 [debug] [MainThread]: Using mysql connection "master"
+[0m17:26:56.772196 [debug] [MainThread]: On master: COMMIT
+[0m17:26:56.772196 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m17:26:56.772196 [debug] [MainThread]: On master: Close
+[0m17:26:56.773203 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m17:26:56.773203 [info ] [MainThread]: 
+[0m17:26:56.778176 [debug] [Thread-1 (]: Began running node seed.Exoplanet_DBT.DataFrameFinal
+[0m17:26:56.778176 [info ] [Thread-1 (]: 1 of 1 START seed file Exoplanet_DBT.DataFrameFinal ............................ [RUN]
+[0m17:26:56.779173 [debug] [Thread-1 (]: Acquiring new mysql connection 'seed.Exoplanet_DBT.DataFrameFinal'
+[0m17:26:56.779173 [debug] [Thread-1 (]: Began compiling node seed.Exoplanet_DBT.DataFrameFinal
+[0m17:26:56.779173 [debug] [Thread-1 (]: Timing info for seed.Exoplanet_DBT.DataFrameFinal (compile): 17:26:56.779173 => 17:26:56.779173
+[0m17:26:56.780170 [debug] [Thread-1 (]: Began executing node seed.Exoplanet_DBT.DataFrameFinal
+[0m17:26:58.473017 [debug] [Thread-1 (]: Using mysql connection "seed.Exoplanet_DBT.DataFrameFinal"
+[0m17:26:58.473017 [debug] [Thread-1 (]: On seed.Exoplanet_DBT.DataFrameFinal: BEGIN
+[0m17:26:58.474010 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m17:26:58.477003 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m17:26:58.478001 [debug] [Thread-1 (]: Using mysql connection "seed.Exoplanet_DBT.DataFrameFinal"
+[0m17:26:58.478001 [debug] [Thread-1 (]: On seed.Exoplanet_DBT.DataFrameFinal: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "Exoplanet_DBT", "target_name": "dev", "node_id": "seed.Exoplanet_DBT.DataFrameFinal"} */
+
+    create table `Exoplanet_DBT`.`DataFrameFinal` (`pl_name` text,`hostname` text,`hd_name` text,`hip_name` text,`tic_id` text,`gaia_dr2_id` text,`gaia_dr3_id` text,`sy_snum` integer,`sy_pnum` integer,`sy_mnum` integer,`cb_flag` integer,`discoverymethod` text,`disc_year` integer,`disc_facility` text,`pl_controv_flag` integer,`pl_orbper` float8,`pl_orbpererr1` float8,`pl_orbpererr2` float8,`pl_orbperlim` integer,`pl_orbsmax` float8,`pl_orbsmaxerr1` float8,`pl_orbsmaxerr2` float8,`pl_orbsmaxlim` integer,`pl_rade` float8,`pl_radeerr1` float8,`pl_radeerr2` float8,`pl_radelim` integer,`pl_radj` float8,`pl_radjerr1` float8,`pl_radjerr2` float8,`pl_radjlim` integer,`pl_bmasse` float8,`pl_bmasseerr1` float8,`pl_bmasseerr2` float8,`pl_bmasselim` integer,`pl_bmassj` float8,`pl_bmassjerr1` float8,`pl_bmassjerr2` float8,`pl_bmassjlim` integer,`pl_bmassprov` text,`pl_dens` float8,`pl_denserr1` float8,`pl_denserr2` float8,`pl_denslim` integer,`pl_orbeccen` float8,`pl_orbeccenerr1` float8,`pl_orbeccenerr2` float8,`pl_orbeccenlim` integer,`pl_insol` float8,`pl_insolerr1` float8,`pl_insolerr2` float8,`pl_insollim` integer,`pl_eqt` float8,`pl_eqterr1` float8,`pl_eqterr2` float8,`pl_eqtlim` integer,`pl_tranmid` float8,`pl_tranmiderr1` float8,`pl_tranmiderr2` float8,`pl_tranmidlim` integer,`ttv_flag` integer,`pl_occdep` float8,`pl_occdeperr1` float8,`pl_occdeperr2` float8,`pl_occdeplim` integer,`st_spectype` text,`st_teff` float8,`st_tefferr1` float8,`st_tefferr2` float8,`st_tefflim` integer,`st_rad` float8,`st_raderr1` float8,`st_raderr2` float8,`st_radlim` integer,`st_mass` float8,`st_masserr1` float8,`st_masserr2` float8,`st_masslim` integer,`st_met` float8,`st_meterr1` float8,`st_meterr2` float8,`st_metlim` integer,`st_metratio` text,`st_lum` float8,`st_lumerr1` float8,`st_lumerr2` float8,`st_lumlim` integer,`st_logg` float8,`st_loggerr1` float8,`st_loggerr2` float8,`st_logglim` integer,`st_dens` float8,`st_denserr1` float8,`st_denserr2` float8,`st_denslim` integer,`rastr` text,`ra` float8,`decstr` text,`dec` float8,`sy_dist` float8,`sy_disterr1` float8,`sy_disterr2` float8,`sy_vmag` float8,`sy_vmagerr1` float8,`sy_vmagerr2` float8,`sy_kmag` float8,`sy_kmagerr1` float8,`sy_kmagerr2` float8,`sy_gaiamag` float8,`sy_gaiamagerr1` float8,`sy_gaiamagerr2` float8,`Masse_(10^24kg)` float8,`Gravity_(G_earth)` float8,`Score_roch` float8,`pl_type` text)
+  
+[0m17:26:58.503821 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m17:28:07.724609 [debug] [Thread-1 (]: Using mysql connection "seed.Exoplanet_DBT.DataFrameFinal"
+[0m17:28:07.724609 [debug] [Thread-1 (]: On seed.Exoplanet_DBT.DataFrameFinal: 
+          insert into `Exoplanet_DBT`.`DataFrameFinal` (`pl_name`, `hostname`, `hd_name`, `hip_name`, `tic_id`, `gaia_dr2_id`, `gaia_dr3_id`, `sy_snum`, `sy_pnum`, `sy_mnum`, `cb_flag`, `discoverymethod`, `disc_year`, `disc_facility`, `pl_controv_flag`, `pl_orbper`, `pl_orbpererr1`, `pl_orbpererr2`, `pl_orbperlim`, `pl_orbsmax`, `pl_orbsmaxerr1`, `pl_orbsmaxerr2`, `pl_orbsmaxlim`, `pl_rade`, `pl_radeerr1`, `pl_radeerr2`, `pl_radelim`, `pl_radj`, `pl_radjerr1`, `pl_radjerr2`, `pl_radjlim`, `pl_bmasse`, `pl_...
+[0m17:28:08.358294 [debug] [Thread-1 (]: SQL status: SUCCESS 6147 in 1.0 seconds
+[0m17:28:08.366267 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.Exoplanet_DBT.DataFrameFinal"
+[0m17:28:08.378233 [debug] [Thread-1 (]: On seed.Exoplanet_DBT.DataFrameFinal: COMMIT
+[0m17:28:08.378233 [debug] [Thread-1 (]: Using mysql connection "seed.Exoplanet_DBT.DataFrameFinal"
+[0m17:28:08.378233 [debug] [Thread-1 (]: On seed.Exoplanet_DBT.DataFrameFinal: COMMIT
+[0m17:28:08.397886 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m17:28:08.398883 [debug] [Thread-1 (]: Timing info for seed.Exoplanet_DBT.DataFrameFinal (execute): 17:26:56.780170 => 17:28:08.397886
+[0m17:28:08.398883 [debug] [Thread-1 (]: On seed.Exoplanet_DBT.DataFrameFinal: Close
+[0m17:28:08.398883 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '71da5c66-c99d-41bf-9b98-dd53407a5b2c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A543120C20>]}
+[0m17:28:08.399880 [info ] [Thread-1 (]: 1 of 1 OK loaded seed file Exoplanet_DBT.DataFrameFinal ........................ [[32mINSERT 6147[0m in 71.62s]
+[0m17:28:08.399880 [debug] [Thread-1 (]: Finished running node seed.Exoplanet_DBT.DataFrameFinal
+[0m17:28:08.400876 [debug] [MainThread]: Using mysql connection "master"
+[0m17:28:08.401873 [debug] [MainThread]: On master: BEGIN
+[0m17:28:08.401873 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m17:28:08.405859 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m17:28:08.405859 [debug] [MainThread]: On master: COMMIT
+[0m17:28:08.405859 [debug] [MainThread]: Using mysql connection "master"
+[0m17:28:08.405859 [debug] [MainThread]: On master: COMMIT
+[0m17:28:08.406856 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m17:28:08.406856 [debug] [MainThread]: On master: Close
+[0m17:28:08.406856 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:28:08.406856 [debug] [MainThread]: Connection 'list_schemas' was properly closed.
+[0m17:28:08.406856 [debug] [MainThread]: Connection 'list_None_Exoplanet_DBT' was properly closed.
+[0m17:28:08.407852 [debug] [MainThread]: Connection 'seed.Exoplanet_DBT.DataFrameFinal' was properly closed.
+[0m17:28:08.407852 [info ] [MainThread]: 
+[0m17:28:08.407852 [info ] [MainThread]: Finished running 1 seed in 0 hours 1 minutes and 11.67 seconds (71.67s).
+[0m17:28:08.408850 [debug] [MainThread]: Command end result
+[0m17:28:08.414830 [info ] [MainThread]: 
+[0m17:28:08.414830 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m17:28:08.415826 [info ] [MainThread]: 
+[0m17:28:08.415826 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m17:28:08.416822 [debug] [MainThread]: Command `dbt seed` succeeded at 17:28:08.416822 after 71.90 seconds
+[0m17:28:08.416822 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A54202A510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A54380BF80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A541178140>]}
+[0m17:28:08.417821 [debug] [MainThread]: Flushing usage events
+[0m17:28:19.194135 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001605756FB60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001605756F470>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001605756EF90>]}
+
+
+============================== 17:28:19.196129 | 344d5709-67e7-4810-b905-dd6725f8594d ==============================
+[0m17:28:19.196129 [info ] [MainThread]: Running with dbt=1.7.19
+[0m17:28:19.197130 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': 'J:\\Projet 3\\Exoplanet_DBT\\logs', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\berna\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt run', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m17:28:19.286833 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '344d5709-67e7-4810-b905-dd6725f8594d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016057A3FF20>]}
+[0m17:28:19.321236 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '344d5709-67e7-4810-b905-dd6725f8594d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000160563E9250>]}
+[0m17:28:19.322231 [info ] [MainThread]: Registered adapter: mysql=1.7.0
+[0m17:28:19.326218 [debug] [MainThread]: checksum: a8d43cdff37d0f32d7fbe4c5c25bea4bb6c86e162f8ce8fdb1a38cdcf7495431, vars: {}, profile: , target: , version: 1.7.19
+[0m17:28:19.345164 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m17:28:19.345164 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m17:28:19.346165 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.Exoplanet_DBT.example
+[0m17:28:19.349153 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '344d5709-67e7-4810-b905-dd6725f8594d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000160563289E0>]}
+[0m17:28:19.353142 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '344d5709-67e7-4810-b905-dd6725f8594d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016057B75850>]}
+[0m17:28:19.353142 [info ] [MainThread]: Found 1 model, 1 seed, 0 sources, 0 exposures, 0 metrics, 375 macros, 0 groups, 0 semantic models
+[0m17:28:19.354134 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '344d5709-67e7-4810-b905-dd6725f8594d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001605772EB40>]}
+[0m17:28:19.355132 [info ] [MainThread]: 
+[0m17:28:19.355132 [debug] [MainThread]: Acquiring new mysql connection 'master'
+[0m17:28:19.356128 [debug] [ThreadPool]: Acquiring new mysql connection 'list_schemas'
+[0m17:28:19.361111 [debug] [ThreadPool]: Using mysql connection "list_schemas"
+[0m17:28:19.361111 [debug] [ThreadPool]: On list_schemas: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "Exoplanet_DBT", "target_name": "dev", "connection_name": "list_schemas"} */
+select distinct schema_name
+        from information_schema.schemata
+[0m17:28:19.362112 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:28:19.371587 [debug] [ThreadPool]: SQL status: SUCCESS 10 in 0.0 seconds
+[0m17:28:19.371587 [debug] [ThreadPool]: On list_schemas: Close
+[0m17:28:19.372579 [debug] [ThreadPool]: Acquiring new mysql connection 'list_None_Exoplanet_DBT'
+[0m17:28:19.375573 [debug] [ThreadPool]: Using mysql connection "list_None_Exoplanet_DBT"
+[0m17:28:19.375573 [debug] [ThreadPool]: On list_None_Exoplanet_DBT: BEGIN
+[0m17:28:19.376566 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:28:19.379556 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m17:28:19.380553 [debug] [ThreadPool]: Using mysql connection "list_None_Exoplanet_DBT"
+[0m17:28:19.380553 [debug] [ThreadPool]: On list_None_Exoplanet_DBT: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "Exoplanet_DBT", "target_name": "dev", "connection_name": "list_None_Exoplanet_DBT"} */
+select
+      null as "database",
+      table_name as name,
+      table_schema as "schema",
+      case when table_type = 'BASE TABLE' then 'table'
+           when table_type = 'VIEW' then 'view'
+           else table_type
+      end as table_type
+    from information_schema.tables
+    where table_schema = 'Exoplanet_DBT'
+  
+[0m17:28:19.380553 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.0 seconds
+[0m17:28:19.381549 [debug] [ThreadPool]: On list_None_Exoplanet_DBT: ROLLBACK
+[0m17:28:19.381549 [debug] [ThreadPool]: On list_None_Exoplanet_DBT: Close
+[0m17:28:19.382546 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '344d5709-67e7-4810-b905-dd6725f8594d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016057BC5640>]}
+[0m17:28:19.383543 [debug] [MainThread]: Using mysql connection "master"
+[0m17:28:19.383543 [debug] [MainThread]: On master: BEGIN
+[0m17:28:19.383543 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:28:19.386537 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m17:28:19.386537 [debug] [MainThread]: On master: COMMIT
+[0m17:28:19.387538 [debug] [MainThread]: Using mysql connection "master"
+[0m17:28:19.387538 [debug] [MainThread]: On master: COMMIT
+[0m17:28:19.387538 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m17:28:19.387538 [debug] [MainThread]: On master: Close
+[0m17:28:19.388529 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m17:28:19.388529 [info ] [MainThread]: 
+[0m17:28:19.390523 [debug] [Thread-1 (]: Began running node model.Exoplanet_DBT.Fact_mesures_planet
+[0m17:28:19.390523 [info ] [Thread-1 (]: 1 of 1 START sql view model Exoplanet_DBT.Fact_mesures_planet .................. [RUN]
+[0m17:28:19.391519 [debug] [Thread-1 (]: Acquiring new mysql connection 'model.Exoplanet_DBT.Fact_mesures_planet'
+[0m17:28:19.391519 [debug] [Thread-1 (]: Began compiling node model.Exoplanet_DBT.Fact_mesures_planet
+[0m17:28:19.395506 [debug] [Thread-1 (]: Writing injected SQL for node "model.Exoplanet_DBT.Fact_mesures_planet"
+[0m17:28:19.395506 [debug] [Thread-1 (]: Timing info for model.Exoplanet_DBT.Fact_mesures_planet (compile): 17:28:19.391519 => 17:28:19.395506
+[0m17:28:19.395506 [debug] [Thread-1 (]: Began executing node model.Exoplanet_DBT.Fact_mesures_planet
+[0m17:28:19.412453 [debug] [Thread-1 (]: Writing runtime sql for node "model.Exoplanet_DBT.Fact_mesures_planet"
+[0m17:28:19.413446 [debug] [Thread-1 (]: Using mysql connection "model.Exoplanet_DBT.Fact_mesures_planet"
+[0m17:28:19.413446 [debug] [Thread-1 (]: On model.Exoplanet_DBT.Fact_mesures_planet: BEGIN
+[0m17:28:19.413446 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m17:28:19.417432 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m17:28:19.417432 [debug] [Thread-1 (]: Using mysql connection "model.Exoplanet_DBT.Fact_mesures_planet"
+[0m17:28:19.417432 [debug] [Thread-1 (]: On model.Exoplanet_DBT.Fact_mesures_planet: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "Exoplanet_DBT", "target_name": "dev", "node_id": "model.Exoplanet_DBT.Fact_mesures_planet"} */
+
+  create view `Exoplanet_DBT`.`Fact_mesures_planet__dbt_tmp`
+    
+    
+  as (
+    with Fact_mesures_planet as (
+    select *
+    from `Exoplanet_DBT`.`DataFrameFinal`
+),
+
+Fact_mesures_planet_renamed as (
+    select
+        pl_name as nom_planete,
+        hostname as nom_etoile_hote,
+        discoverymethod as methode_decouverte,
+        pl_orbper as periode_orbitale,
+        pl_orbperlim as periode_orbitale_ind_limite,
+        pl_orbsmax as demi_grand_axe_orbite,
+        pl_rade as rayon_planete_terre,
+        pl_radj as rayon_planete_jupiter,
+        pl_bmasse as masse_planete_terre_ou_msin_i,
+        pl_bmassj as masse_planete_jupiter_ou_msin_i,
+        pl_bmassprov as provenance_masse_planete,
+        pl_dens as densite_planete,
+        pl_orbeccen as excentricite_orbite,
+        pl_eqt as temperature_equilibre,
+        pl_tranmid as milieu_transit,
+        ttv_flag as ind_variations_temps_transit,
+        pl_occdep as profondeur_occultation,
+        `Masse_(10^24kg)` as masse_10_24kg,
+        `Gravity_(G_earth)` as gravite_terre,
+        Score_roch as score_roch,
+        pl_type as type_planete
+    from Fact_mesures_planet
+)
+
+select *
+from Fact_mesures_planet_renamed
+  );
+[0m17:28:19.421419 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m17:28:19.424414 [debug] [Thread-1 (]: Using mysql connection "model.Exoplanet_DBT.Fact_mesures_planet"
+[0m17:28:19.425406 [debug] [Thread-1 (]: On model.Exoplanet_DBT.Fact_mesures_planet: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "Exoplanet_DBT", "target_name": "dev", "node_id": "model.Exoplanet_DBT.Fact_mesures_planet"} */
+
+    drop view if exists `Exoplanet_DBT`.`Fact_mesures_planet` cascade
+  
+[0m17:28:19.426402 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m17:28:19.427403 [debug] [Thread-1 (]: Using mysql connection "model.Exoplanet_DBT.Fact_mesures_planet"
+[0m17:28:19.427403 [debug] [Thread-1 (]: On model.Exoplanet_DBT.Fact_mesures_planet: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "Exoplanet_DBT", "target_name": "dev", "node_id": "model.Exoplanet_DBT.Fact_mesures_planet"} */
+
+    rename table `Exoplanet_DBT`.`Fact_mesures_planet__dbt_tmp` to `Exoplanet_DBT`.`Fact_mesures_planet`
+  
+[0m17:28:19.430389 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m17:28:19.438365 [debug] [Thread-1 (]: On model.Exoplanet_DBT.Fact_mesures_planet: COMMIT
+[0m17:28:19.438365 [debug] [Thread-1 (]: Using mysql connection "model.Exoplanet_DBT.Fact_mesures_planet"
+[0m17:28:19.438365 [debug] [Thread-1 (]: On model.Exoplanet_DBT.Fact_mesures_planet: COMMIT
+[0m17:28:19.439367 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m17:28:19.441355 [debug] [Thread-1 (]: Using mysql connection "model.Exoplanet_DBT.Fact_mesures_planet"
+[0m17:28:19.441355 [debug] [Thread-1 (]: On model.Exoplanet_DBT.Fact_mesures_planet: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "Exoplanet_DBT", "target_name": "dev", "node_id": "model.Exoplanet_DBT.Fact_mesures_planet"} */
+drop view if exists `Exoplanet_DBT`.`Fact_mesures_planet__dbt_backup`
+[0m17:28:19.443349 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m17:28:19.444349 [debug] [Thread-1 (]: Timing info for model.Exoplanet_DBT.Fact_mesures_planet (execute): 17:28:19.395506 => 17:28:19.443349
+[0m17:28:19.444349 [debug] [Thread-1 (]: On model.Exoplanet_DBT.Fact_mesures_planet: Close
+[0m17:28:19.444349 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '344d5709-67e7-4810-b905-dd6725f8594d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016057CA4590>]}
+[0m17:28:19.445342 [info ] [Thread-1 (]: 1 of 1 OK created sql view model Exoplanet_DBT.Fact_mesures_planet ............. [[32mSUCCESS 0[0m in 0.05s]
+[0m17:28:19.445342 [debug] [Thread-1 (]: Finished running node model.Exoplanet_DBT.Fact_mesures_planet
+[0m17:28:19.446339 [debug] [MainThread]: Using mysql connection "master"
+[0m17:28:19.446339 [debug] [MainThread]: On master: BEGIN
+[0m17:28:19.446339 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m17:28:19.449334 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m17:28:19.450330 [debug] [MainThread]: On master: COMMIT
+[0m17:28:19.450330 [debug] [MainThread]: Using mysql connection "master"
+[0m17:28:19.450330 [debug] [MainThread]: On master: COMMIT
+[0m17:28:19.450330 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m17:28:19.450330 [debug] [MainThread]: On master: Close
+[0m17:28:19.451326 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:28:19.451326 [debug] [MainThread]: Connection 'list_schemas' was properly closed.
+[0m17:28:19.451326 [debug] [MainThread]: Connection 'list_None_Exoplanet_DBT' was properly closed.
+[0m17:28:19.451326 [debug] [MainThread]: Connection 'model.Exoplanet_DBT.Fact_mesures_planet' was properly closed.
+[0m17:28:19.451326 [info ] [MainThread]: 
+[0m17:28:19.452319 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 0.10 seconds (0.10s).
+[0m17:28:19.452319 [debug] [MainThread]: Command end result
+[0m17:28:19.456305 [info ] [MainThread]: 
+[0m17:28:19.456305 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m17:28:19.456305 [info ] [MainThread]: 
+[0m17:28:19.457302 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m17:28:19.457302 [debug] [MainThread]: Command `dbt run` succeeded at 17:28:19.457302 after 0.32 seconds
+[0m17:28:19.458299 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016056494950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000160563E9250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016057B36000>]}
+[0m17:28:19.458299 [debug] [MainThread]: Flushing usage events
