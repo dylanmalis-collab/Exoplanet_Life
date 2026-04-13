@@ -33,13 +33,15 @@ ENRICHMENT_URL = (
     "refs/heads/main/exoplanet_hosts_spectype_clean.csv"
 )
 
+EXPORT_DIR = BASE_DIR / "data_exports"
+EXPORT_FILE = EXPORT_DIR / "raw_exoplanets_enriched.csv"
+
 
 # =========================================================
 # FONCTIONS UTILITAIRES
 # =========================================================
 
 def map_spectral_type(value) -> str:
-    """Mappe le type spectral détaillé vers une catégorie simplifiée."""
     if pd.isna(value):
         return "Unknown"
 
@@ -67,12 +69,6 @@ def map_spectral_type(value) -> str:
 
 
 def impute_planets(df: pd.DataFrame, max_iter: int = 10) -> pd.DataFrame:
-    """
-    Complète itérativement certaines colonnes physiques :
-    - Gravity_G_earth_calc
-    - pl_dens_calc
-    - pl_bmasse_calc
-    """
     df = df.copy()
 
     cols_check = ["Gravity_G_earth_calc", "pl_dens_calc", "pl_bmasse_calc"]
@@ -89,7 +85,6 @@ def impute_planets(df: pd.DataFrame, max_iter: int = 10) -> pd.DataFrame:
     for _ in range(max_iter):
         before_na = df[cols_check].isna().sum().sum()
 
-        # 1) masse + rayon -> gravité
         mask_phys = df["pl_bmasse_calc"].notna() & df["pl_rade"].notna()
 
         mask_g = mask_phys & df["Gravity_G_earth_calc"].isna()
@@ -98,13 +93,11 @@ def impute_planets(df: pd.DataFrame, max_iter: int = 10) -> pd.DataFrame:
             (df.loc[mask_g, "pl_rade"] ** 2)
         )
 
-        # 2) masse + rayon -> densité
         mask_d = mask_phys & df["pl_dens_calc"].isna()
         df.loc[mask_d, "pl_dens_calc"] = (
             (df.loc[mask_d, "pl_bmasse_calc"] / (df.loc[mask_d, "pl_rade"] ** 3)) * 5.51
         )
 
-        # 3) densité + rayon -> masse
         mask_m_from_density = (
             df["pl_dens_calc"].notna() &
             df["pl_rade"].notna() &
@@ -115,7 +108,6 @@ def impute_planets(df: pd.DataFrame, max_iter: int = 10) -> pd.DataFrame:
             (df.loc[mask_m_from_density, "pl_rade"] ** 3)
         )
 
-        # 4) gravité + rayon -> masse
         mask_m_from_gravity = (
             df["Gravity_G_earth_calc"].notna() &
             df["pl_rade"].notna() &
@@ -134,7 +126,6 @@ def impute_planets(df: pd.DataFrame, max_iter: int = 10) -> pd.DataFrame:
 
 
 def compute_habitability(df: pd.DataFrame) -> pd.DataFrame:
-    """Calcule des indicateurs simplifiés d’habitabilité."""
     df = df.copy()
 
     base_ok = (
@@ -176,9 +167,8 @@ def compute_habitability(df: pd.DataFrame) -> pd.DataFrame:
 # =========================================================
 
 def fetch_data() -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Récupère les deux sources de données."""
     print("Téléchargement des données NASA...")
-    df_nasa = pd.read_csv(NASA_URL)
+    df_nasa = pd.read_csv(NASA_URL, low_memory=False)
 
     print("Téléchargement des données d’enrichissement GitHub...")
     df_enrichment = pd.read_csv(ENRICHMENT_URL)
@@ -191,7 +181,6 @@ def fetch_data() -> tuple[pd.DataFrame, pd.DataFrame]:
 # =========================================================
 
 def transform_data(df_nasa: pd.DataFrame, df_enrichment: pd.DataFrame) -> pd.DataFrame:
-    """Transforme, enrichit et prépare le dataset final."""
     print("Fusion des datasets...")
 
     df = df_nasa.merge(
@@ -201,28 +190,20 @@ def transform_data(df_nasa: pd.DataFrame, df_enrichment: pd.DataFrame) -> pd.Dat
         suffixes=("", "_new")
     )
 
-    # Remplacer uniquement les valeurs manquantes de la source NASA
     df["st_spectype"] = df["st_spectype"].fillna(df["st_spectype_new"])
     df = df.drop(columns=["st_spectype_new"])
 
-    # Nettoyage
     df = df.drop_duplicates()
 
-    # Mapping spectral
     df["st_spectype_group"] = df["st_spectype"].apply(map_spectral_type)
-
-    # Fallback enrichi
     df["st_spectype_group_en"] = df["st_spectype_group"].replace("Unknown", "M")
 
-    # Luminosité linéaire
     df["st_lum_lin"] = 10 ** df["st_lum"]
 
-    # Valeurs complétées par médiane du groupe spectral
     df["st_lum_lin_calc"] = df["st_lum_lin"].fillna(
         df.groupby("st_spectype_group_en")["st_lum_lin"].transform("median")
     )
 
-    # 1er calcul de l’insolation et température
     df["pl_insol_calc"] = df["pl_insol"].fillna(
         df["st_lum_lin_calc"] / (df["pl_orbsmax"] ** 2)
     )
@@ -230,7 +211,6 @@ def transform_data(df_nasa: pd.DataFrame, df_enrichment: pd.DataFrame) -> pd.Dat
         255 * (df["pl_insol_calc"] ** 0.25)
     )
 
-    # 1ère tentative de calcul de distance orbitale
     df["pl_orbsmax_calc"] = df["pl_orbsmax"].fillna(
         np.sqrt(df["st_lum_lin_calc"] / df["pl_insol_calc"])
     )
@@ -238,7 +218,6 @@ def transform_data(df_nasa: pd.DataFrame, df_enrichment: pd.DataFrame) -> pd.Dat
         np.sqrt(df["st_lum_lin_calc"] / ((df["pl_eqt_calc"] / 255) ** 4))
     )
 
-    # 2e passage
     df["pl_insol_calc"] = df["pl_insol_calc"].fillna(
         df["st_lum_lin_calc"] / (df["pl_orbsmax_calc"] ** 2)
     )
@@ -253,27 +232,21 @@ def transform_data(df_nasa: pd.DataFrame, df_enrichment: pd.DataFrame) -> pd.Dat
         np.sqrt(df["st_lum_lin_calc"] / ((df["pl_eqt_calc"] / 255) ** 4))
     )
 
-    # Gravité terrestre relative
     df["Gravity_G_earth"] = df["pl_bmasse"] / (df["pl_rade"] ** 2)
 
-    # Imputation des variables physiques
     df = impute_planets(df)
 
-    # Masse convertie
-    df["Masse_10^24kg"] = df["pl_bmasse"] * 5.972
-    df["Masse_10^24kg_calc"] = df["pl_bmasse_calc"] * 5.972
+    df["masse_10_24kg"] = df["pl_bmasse"] * 5.972
+    df["masse_10_24kg_calc"] = df["pl_bmasse_calc"] * 5.972
 
-    # Score rocheux
     df["Score_roch"] = df["pl_dens_calc"] * (1 / df["pl_rade"]) ** 3
 
-    # Type de planète
     df["pl_type"] = np.where(
         (df["Score_roch"] > 2.2) & (df["pl_rade"] <= 1.7),
         "Rocheuse",
         "Gazeuse/Mixte"
     )
 
-    # Similarité à la Terre
     df["sim_earth"] = (
         (1 - np.abs((df["pl_rade"] - 1) / (df["pl_rade"] + 1))) ** 0.57 *
         (1 - np.abs((df["pl_dens_calc"] - 5.51) / (df["pl_dens_calc"] + 5.51))) ** 1.07 *
@@ -281,16 +254,12 @@ def transform_data(df_nasa: pd.DataFrame, df_enrichment: pd.DataFrame) -> pd.Dat
         (1 - np.abs((df["pl_eqt_calc"] - 288) / (df["pl_eqt_calc"] + 288))) ** 5.58
     ) ** 0.25
 
-    # Eau possible
     df["eau_possible"] = df["pl_insol_calc"].between(0.5, 1.5).astype(int)
 
-    # Habitabilité
     df = compute_habitability(df)
 
-    # Métadonnées d’ingestion
     df["ingestion_timestamp"] = pd.Timestamp.utcnow()
 
-    # Nettoyage des infinis pour BigQuery
     df = df.replace([np.inf, -np.inf], np.nan)
 
     print(f"Transformation terminée : {len(df)} lignes prêtes à être chargées.")
@@ -298,11 +267,21 @@ def transform_data(df_nasa: pd.DataFrame, df_enrichment: pd.DataFrame) -> pd.Dat
 
 
 # =========================================================
+# EXPORT CSV
+# =========================================================
+
+def export_to_csv(df: pd.DataFrame) -> None:
+    """Exporte le DataFrame enrichi dans le repo."""
+    EXPORT_DIR.mkdir(parents=True, exist_ok=True)
+    df.to_csv(EXPORT_FILE, index=False, encoding="utf-8")
+    print(f"CSV exporté : {EXPORT_FILE}")
+
+
+# =========================================================
 # CHARGEMENT
 # =========================================================
 
 def load_to_bigquery(df: pd.DataFrame) -> None:
-    """Charge le DataFrame final dans BigQuery."""
     print(f"Chargement dans BigQuery : {TABLE_ID}")
 
     client = bigquery.Client()
@@ -330,6 +309,7 @@ def load_to_bigquery(df: pd.DataFrame) -> None:
 def main() -> None:
     df_nasa, df_enrichment = fetch_data()
     df_final = transform_data(df_nasa, df_enrichment)
+    export_to_csv(df_final)
     load_to_bigquery(df_final)
 
 

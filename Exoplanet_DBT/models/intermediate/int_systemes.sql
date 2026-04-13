@@ -18,6 +18,12 @@ select distinct
     nb_planetes_systeme,
     nb_lunes_systeme,
     systeme_binaire_flag,
+
+    ascension_droite_str,
+    ascension_droite,
+    declinaison_str,
+    declinaison,
+
     distance_systeme,
     magnitude_visible,
     magnitude_k,

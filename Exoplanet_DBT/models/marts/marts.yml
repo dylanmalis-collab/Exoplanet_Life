@@ -21,20 +21,20 @@ models:
           - not_null
           - unique
 
-  - name: dim_decouverte
-    description: Dimension de découverte
+  - name: dim_methode
+    description: Dimension des méthodes de découverte
     columns:
-      - name: decouverte_sk
-        description: Clé substitut de la découverte
+      - name: methode_sk
+        description: Clé substitut de la méthode de découverte
         tests:
           - not_null
           - unique
 
   - name: dim_etoile
-    description: Dimension des étoiles
+    description: Dimension des types d'étoile
     columns:
-      - name: etoile_sk
-        description: Clé substitut de l’étoile
+      - name: type_etoile_sk
+        description: Clé substitut du type d'étoile
         tests:
           - not_null
           - unique
@@ -53,9 +53,9 @@ models:
       - name: systeme_sk
         tests:
           - not_null
-      - name: decouverte_sk
+      - name: methode_sk
         tests:
           - not_null
-      - name: etoile_sk
+      - name: type_etoile_sk
         tests:
           - not_null
