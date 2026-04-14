@@ -60,7 +60,7 @@ def map_spectral_type(x):
 df["st_spectype_group"] = df["st_spectype"].apply(map_spectral_type)
 
 #création d'une colonne df["st_spectype_group_en"] enrichie par le type M (80% des étoiles dans l'univers visible + le plus restrictif des types)
-df["st_spectype_group_en"] = df["st_spectype_group"].fillna("M")
+df["st_spectype_group_en"] = df["st_spectype_group"].replace("Unknown", "M")
 
 #df["st_lum"] est un logarithme, conversion dans une colonne en valeur brut linéaire
 df["st_lum_lin"] = 10 ** df["st_lum"]
